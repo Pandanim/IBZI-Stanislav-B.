@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<TITLE>Effect of temperature on electrical cell conductivity of human erythrocytes</TITLE>
+<meta name="E-Class" content="Journal on Biomedical Radioelectronics">
+<link rel="stylesheet" type="text/css" href="../css/4.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body>
+
+<div class="top-txt">Proceedings of the Russian German Conferencee<br>
+on Biomedical Engineering</div>	
+
+<div class="main-txt">Development of the infrared images processing algorithm for the<br>
+automatic detection of the early stage of periodontal disease</div>
+<div class="txt">L.O. Akulenko<sup>1</sup>,A.V. Kolpakov<sup>1</sup><br>
+<sup>1</sup>Biotechnical Medical Systems (BME-1) dept, Bauman Moscow State Technical University, 2 nd Baumanskaja St. n°5,<br>
+bld 1, Moscow, 105005, Russian Federation<br></div>
+<div class="txt">
+<br>
+Contact: kolpakovalexx@yandex.ru</div>
+
+
+<div class="flex-container"> 
+<div class="colums" class="flex-item"><h3>Introduction</h3>
+<p>According to the WHO, inflammatory periodontal diseases occur in 90-95% of the adult population and lead to
+pathological changes in the dentoalveolar system [1].</p>
+<p>Diagnosis is more based on visual examination of the oral
+cavity and index evaluation of the soft tissue periodontal
+conditions and is subjective. In most cases, patients already diagnosed with signs of inflammatory diseases are
+diagnosed, diagnosis at an early stage of inflammation
+causes significВнесиant difficulties, since there are no
+clinical manifestations of the inflammatory process [2-5].</p>
+<p>As a result of previous studies, the possibility of visualization of the foci of inflammation of soft periodontal tissue (hereinafter – SPT) at an early stage has been established [1-8].</p>
+<p>The purpose of this study is the development and testing
+of an algorithm for the automatic detection of foci of inflammation in the IR images of SPT. In the course of the
+research, the following tasks were set and solved:
+– the effectiveness of segmentation algorithms is investigated when inflammation foci are detected at various
+stages of the inflammatory process;</p>
+– an assessment of the quality of the algorithm for automatic detection of inflammatory foci on the IR images of
+SPT was carried out.</p>
+<h3>Results</h3>
+The results of the segmentaion quality estimation are
+presented in tab. 3.<br>
+<img width="400" src="../im/p7.PNG"><br>
+<h3>Discussion</h3>
+The segmentation algorithm modulating the gradient on
+the boundary of the focus of inflammation with the use of
+a sliding mask showed the highest relative segmentation
+error, because at the time of registration, artifacts, such as
+salivation, with a high modulus of the gradient appear on
+the IR images of the SPT, which in turn leads to the detection of regions that do not correspond to the centers of
+inflammation of the SPT .
+The algorithm for segmentation of inflammatory foci on
+the basis of the watershed method showed good results
+when a stage of severe inflammation was detected on the
+IR images of SPT. Foci of early inflammation of SPT by
+the watershed method are not segmented, which makes it
+impossible to apply this algorithm as a universal method
+for segmentation of inflammatory foci for various stages
+of the inflammatory process of SPT.
+The segmentation algorithm based on the contrast ratio at
+the boundary of the SPT inflammation focus with the use
+of a sliding mask is the best and provides the lowest relative segmentation error.
+<h3>Conclusions</h3>
+As a result of the study, it was established that the least
+relative error of segmentation of inflammatory foci on IR
+images of SPT provides an algorithm for automatically
+detecting inflammatory foci by the contrast ratio at the
+border of the SPT inflammation focus using a sliding
+mask.
+
+
+
+ </div>
+<div class="colums" class="flex-item"> <h3>Materials and Methods</h3>
+The study was carried out using a verified database of 150
+IR images of SPT at various stages of the inflammatory
+process, formed as a result of previous studies [7]. The
+Database contains of 20 IR images of Intact SPT, 70 IR
+images of the stage of the SPT early inflammation and 60
+IR images of the stage of the SPT severe inflammation.
+The choice of informative parameters of inflammatory
+foci is expedient to be carried out taking into account the
+laws of visual perception. High contrast of the object with
+the background is easier to perceive with the eye, which
+allows to identify the primary symptoms of the inflammatory process on the IR images of the SPT. The contrast in
+its turn is due to the intensity differences in the image.
+Thus, to determine the distinctive features of the inflammatory foci, the parameters characterizing the spatial distribution of the energy of inflammatory foci in the IR images of the SPT are analyzed, see tab. 1.
+<h4>Table 1: Contents of the IR image of SPT database</h4>
+<TABLE cellpadding="5">
+	<tr>
+		<td><b>№</b></td><td><b>The parameter<br>(p<sub>i</sub>)</b></td><td><b>Formula for calculation</b></td><td><b>Notation</b></td>
+	</tr>
+     <tr>
+		<td width="20">1</td>
+		<td width="100">Average
+intensity</td>
+		<td width="100"><img  src="../im/f1.PNG"></td>
+		<td width="100" rowspan="2"> I<sub>i</sub> – intensity of
+the i-th element
+of the image
+</td>
+	</tr>
+
+   <tr>
+		<td>2</td>
+		<td>Selective SD</td>
+		<td><img  src="../im/f2.PNG"></td>
+	</tr>
+	   <tr>
+		<td>3</td>
+		<td>Coefficient of
+contrast at the
+border of the
+focus of inflammation of
+SPT
+</td>
+		<td><img src="../im/f3.PNG"></td>
+		<td>I<sub>max</sub>, I<sub>min</sub> – the
+maximum and
+minimum modes of intensity
+histogram</td>
+	</tr>
+	   <tr>
+		<td>4</td>
+		<td>Modulus of
+gradient on
+the border of
+the inflammatory focus of
+SPT</td>
+		<td><img  src="../im/f4.PNG"></td>
+		<td>G<sub>x</sub>=dI/dx,
+G<sub>y</sub>=dI/dy are
+the intensity
+gradients in the
+horizontal and
+vertical directions, respectively</td>
+	</tr>
+	
+	   <tr>
+		<td>5</td>
+		<td>The ratio of
+average intensities</td>
+		<td><img src="../im/f5.PNG"></td>
+		<td>I<sub>o</sub> is the average
+intensity of the
+image
+</td>
+	</tr>
+
+</TABLE>
+In the course of the studies it was established that the IR
+images of the SPT at the stage of early and severe inflammation differ from intact tissues by the mean intensity Im, the selective mean square deviation SI, the contrast
+coefficient at the border of the inflammatory focus of the
+SPT Ca, the gradient modulus at the border of the inflammatory focus of the
+<h4>Table 2: Values of informative parameters of inflammatory foci on IR images of SPT</h4>
+<TABLE cellpadding="2">
+	<tr>
+		<td>№</td><td>Parameters</td> <td>Intact
+tissues</td>
+<td>early inflammation</td>
+<td>severe inflammation</td>
+	</tr>
+     
+<tr><td>1</td> <td>Im <td>0,39± 0,04</td> <td>0,36± 0,01</td> <td>0,71± 0,02</td></tr>
+<tr><td>2</td> <td>S<sub>I</sub></td> <td>0,03± 0,01</td> <td>(70± 1)10<sup>-3</sup></td> <td>(60± 1)10<sup>-3</sup></td></tr>
+<tr><td>3 </td><td>Ca </td><td>0,33± 0,02 </td><td>0,54± 0,02 </td><td>0,55± 0,15</td></tr>
+<tr><td>4 </td><td>G </td><td>(18± 3)10<sup>-4</sup> </td><td>(50± 1)10<sup>-4</sup> </td><td>(48± 1)10<sup>-4</sup></td></tr>
+<tr><td>5</td> <td>r </td><td>1,18± 0,18 </td><td>1,82± 0,18 </td><td>3,68± 0,78</td></tr>
+</TABLE>
+<p>There were threshold segmenation with the parameters
+Ca, G, and a watershed method applied for automatic
+segmentation of the centers of an inflammation on IR
+images of SPT.
+The calculation of Im, SI and r were carried out within the
+investigated area of the potential focus of inflammation,
+and for G and Ca – outside. If the obtained values of informative parameters belong to the confidence intervals
+of the foci of inflammation, then the region was classified
+as a foci of inflammation, if not, then intact tissues.
+The evaluation of the segmentaion quality was carried out
+by calculating the relative error of the detection of foci for
+each of the algorithms:</p>
+<img width="300" src="../im/p6.PNG"><br>
+where k is the relative error, Sa – the area of the focus of
+inflammation, obtained in the mode of automatic allocation using the considered segmentation algorithms, Sm - the
+area of the focus of inflammation, allocated manually.
+The Sa and Sm were determined by counting overall pixels
+quantity of the segmented areas. The smaller the relative
+error of the two areas, the more accurately the area of the
+focus of inflammation of the SPT is segmented.
+</div>
+</div>
+</div>
+
+<div class="flex-container">
+	
+	<div class="flex-item" > <a class="hyper-l" href="../html/3.html"><---Prev page <img class="prev-p" src="../im/katze.png"></a></div>
+<div class="flex-item" ><a class="hyper-l" href="../html/5.html"><img src="../im/katze.png">Next page ---> </div>
+</div>
+
+
+</body>

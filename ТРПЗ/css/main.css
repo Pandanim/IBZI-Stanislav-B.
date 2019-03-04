@@ -1,0 +1,58 @@
+.colums
+{
+  font-family: 'Calibri'; 
+   text-align:  left;
+     padding: 20px;
+    word-wrap: break-word;
+    width: 500px;
+}
+
+
+.main-txt
+{
+  font-family: 'Calibri'; 
+    font-size: 200%; 
+ text-align:  center;
+  font-weight:bold;
+padding-top: 50px;
+}
+.top-txt{
+  font-family: 'Calibri';  
+ text-align:  right;
+ padding-right: 100px;
+}
+.txt
+{
+  font-family: 'Calibri'; 
+   text-align:  center;
+     padding: 20px;
+}
+.prev-p{
+transform: scale(-1, 1);
+}
+
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+
+}
+
+.flex-item {
+  width: 200px;
+  height: auto; 
+  line-height: 150px;
+  color: white;
+  font-size: 3em;
+  text-align: center;
+}
+
+.hyper-l{
+ font-family: 'Calibri'; 
+    font-size: 50%; 
+    color: #000;
+}
