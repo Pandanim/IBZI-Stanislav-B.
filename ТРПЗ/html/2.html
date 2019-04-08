@@ -3,9 +3,49 @@
 <head> 
 <TITLE>Effect of temperature on electrical cell conductivity of human erythrocytes</TITLE>
 <meta name="E-Class" content="Journal on Biomedical Radioelectronics">
+<link rel="shortcut icon" href="../im/katze.png">
 <link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+			<div class="container">
+         <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="../html/1.html">Home</a></li>
+					<li><a href="../html/2.html">Page 1</a></li>
+					<li><a href="../html/3.html">Page 2</a></li>
+					<li><a href="../html/4.html">Page 3</a></li>
+					<li><a href="../html/5.html">Page 4</a></li>
+				</ul>
+			</div>
+		</nav>
+ 
+<div id="nav-menu">
+        <div id="menu-links">
+            <a href="../html/1.html">Home</a>
+            <a href="../html/2.html">Page 1</a>
+            <a href="../html/3.html">Page 2</a>
+            <a href="../html/4.html">Page 3</a>
+            <a href="../html/5.html">Page 4</a>
+        </div>
+        <div id="menu-icon">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+
 
 <div class="top-txt">Proceedings of the Russian German Conferencee<br>
 on Biomedical Engineering</div>	
@@ -152,13 +192,24 @@ of ≈ 2 found in many biological systems (Glaser, 2000;
 Nobel, 2009). 
 </div>
 </div>
-</div>
 
 <div class="flex-container">
 	
 	<div class="flex-item" > <a class="hyper-l" href="../html/1.html"><---Prev page <img class="prev-p" src="../im/katze.png"></a></div>
-<div class="flex-item" ><a class="hyper-l" href="../html/3.html"><img src="../im/katze.png">Next page ---> </div>
+<div class="flex-item" ><a class="hyper-l" href="../html/3.html"><img src="../im/katze.png">Next page ---></a> </div>
 </div>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript">
+	$("#menu-icon").on("click", function () {
+        if(window.innerHeight > window.innerWidth) {
+            $("#menu-links").slideToggle("slow");
+        }else{
+            $("#menu-links").fadeToggle("slow");
+        }
+    });
+</script>
 </body>

@@ -3,33 +3,121 @@
 <head> 
 <TITLE>Journal on Biomedical Radioelectronics</TITLE>
 <meta name="E-Class" content="Journal on Biomedical Radioelectronics">
+<link rel="shortcut icon" href="../im/katze.png">
 <link rel="stylesheet" type="text/css" href="../css/1.css">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap-iso.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">.toggle-block{cursor: pointer;} .scr{} .t{} .prev-p{transform: scale(-1,1);}</style>
 </head>
 <body>
-<div class="flex-container"> 
-<div class="t1" class="flex-item"> </div>
-<div class="t2" class="flex-item"> </div>
+
+<nav  class="bootstrap-iso navbar  navbar-inverse navbar-static-top" role="navigation" >
+			<div class="container">
+         <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="../html/1.html">Home</a></li>
+					<li><a href="../html/2.html">Page 1</a></li>
+					<li><a href="../html/3.html">Page 2</a></li>
+					<li><a href="../html/4.html">Page 3</a></li>
+					<li><a href="../html/5.html">Page 4</a></li>
+					<li><img class="look" src="../im/katze.png"></li>
+				</ul>
+			</div>
+</nav>
+<div id="nav-menu">
+        <div id="menu-links">
+            <a href="../html/1.html">Home</a>
+            <a href="../html/2.html">Page 1</a>
+            <a href="../html/3.html">Page 2</a>
+            <a href="../html/4.html">Page 3</a>
+            <a href="../html/5.html">Page 4</a>
+        </div>
+        <div id="menu-icon">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+
+<div class="toggle-block flex-container">
+<img class="prev-p" class="flex-item" src="../im/katze.png">	
+<H1 class="flex-item">Press To Start</H1>
+<img class="flex-item rot" src="../im/katze.png">	
 </div>
 
-<div class="flex-container"> 
-<div class="t3" class="flex-item"> </div>
+<div class="flex-container scr"> 
+<div class="t1 t" class="flex-item"> </div>
+<div class="t2 t" class="flex-item"> </div>
+</div>
+
+<div class="flex-container scr"> 
+<div class="t3 t" class="flex-item"> </div>
 <div class="main-txt" class="flex-item" ><H1>XIII RGC</H1></div>
 <div class="t4" class="flex-item"> </div>
 </div>
 <body>
-<div class="flex-container"> 
+<div class="flex-container scr"> 
 <div class="t5" class="flex-item"> </div>
 <div class="t6" class="flex-item"> </div>
 </div>
-<div class="txt"><h1>Journal on Biomedical Radioelectronics</h1>
+<div class="txt scr"><h1>Journal on Biomedical Radioelectronics</h1>
 <h2 >Proceedings of the 13<sup>th</sup> Russian German Conference on Biomedical Engineering<br>
-23-25 May 2018, Aachen, Germany</h2></div>>
-<div class="flex-container">
+23-25 May 2018, Aachen, Germany</h2></div>
+<div class="flex-container scr">
 <img class="flex-item" src="../im/p1.PNG"></div>
-<div class="flex-container">
-	
-<div class="flex-item" ><a class="hyper-l" href="../html/2.html"><img src="../im/katze.png">Next page ---> </div>
+<div class="flex-container scr">
 </div>
+<div class="flex-container scr date-pic"><input  type="text" id="datepicker" required></div>
 
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+		{ $('.scr').hide(); 
+let angle = 0;
+let l = 1;
+            setInterval(function() {
+                $(".rot")
+                    .css('transform', 'rotate('+angle+'deg)');
+                $(".prev-p")
+                    .css('transform', 'rotate(' + -angle+'deg)');
+                angle+= 2;
+                $(".look").css('transform','scale('+l+','+1+')')
+                l = -l;
+            }, 500);
+
+
+});
+	$('.toggle-block').click(function() {
+		$('.scr').hide('fast');
+		$('.scr').show('slow');
+		$(this).hide('fast');
+     
+     $(function() {
+    $("#datepicker").datepicker();
+});
+            
+
+	});
+	$("#menu-icon").on("click", function () {
+        if(window.innerHeight > window.innerWidth) {
+            $("#menu-links").slideToggle("slow");
+        }else{
+            $("#menu-links").fadeToggle("slow");
+        }
+    });
+</script>
 </body>
 </html>
